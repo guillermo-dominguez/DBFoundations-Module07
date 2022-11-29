@@ -6,9 +6,13 @@
 
 
 Name: Guillermo Dominguez
+
 Date: Nov 28th, 2022
+
 Course: DB Foundation (SQL)
+
 Github: https://github.com/guillermo-dominguez/DBFoundations
+
 Assignment 7- Functions
 
 ## Introduction
@@ -16,14 +20,19 @@ In this write-up, I will explain SQL User Defined Functions (UDF) as well as whe
 
 ## SQL UDFs When to Use Them
 SQL UDFs are functions that are defined by users when built-in functions cannot accomplish the task at hand. UDFs can return single values (scalar), or return a table. In the assignment this week we created a function that returns a table:
+
 CREATE Function fProductInventoriesWithPreviousMonthCountsWithKPIs (@KPI int)
 	RETURNS TABLE 
 	AS 
 		RETURN( 
+			
 			SELECT *
+			
 			FROM vProductInventoriesWithPreviousMonthCountsWithKPIs
+			
 			WHERE CountVsPreviousCountKPI = @KPI);
 Go
+
 UDFs can also be used for check constraints to reference columns from other tables.  
 ## Differences between Scalar, Inline, and Multi-Statement Functions
 Scalar functions are functions that only return one value. Scalar functions require that the user includes the schema name, and users can include several parameters in them. An example from Module 7 notes is: 
